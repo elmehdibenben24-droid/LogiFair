@@ -3,37 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogiFair - Global Logistics Ecosystem</title>
+  <title>LogiFair - Global Freight & Delivery</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#eef2ff',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-            }
-          }
-        }
-      }
-    }
-  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white pb-20 relative">
-
-  <!-- Background Decorative Gradients -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
-    <div class="absolute -top-40 -right-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-3xl"></div>
-  </div>
 
   <!-- Live Statistics Bar -->
   <div class="bg-indigo-950/80 border-b border-indigo-500/20 py-2 px-4 text-center text-[11px] sm:text-xs font-semibold text-indigo-300 flex items-center justify-center gap-4 flex-wrap">
@@ -48,7 +25,7 @@
   <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-xl sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <div class="bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-extrabold text-2xl px-3.5 py-1.5 rounded-2xl shadow-lg shadow-indigo-500/25">
+        <div class="bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-extrabold text-2xl px-3.5 py-1.5 rounded-2xl shadow-lg">
           LF
         </div>
         <div>
@@ -57,7 +34,6 @@
         </div>
       </div>
 
-      <!-- User Role Selector & Language Switcher -->
       <div class="flex items-center gap-2 sm:gap-4">
         <!-- Main Tab Switcher -->
         <div class="bg-slate-950 p-1 rounded-xl border border-slate-800 flex text-xs">
@@ -71,10 +47,10 @@
 
         <!-- Language Selector -->
         <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-xl px-2.5 py-2 focus:outline-none cursor-pointer">
-          <option value="ar">العربية</option>
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-          <option value="es">Español</option>
+          <option value="ar">العربية (Arabic)</option>
+          <option value="en">English (US)</option>
+          <option value="fr">Français (FR)</option>
+          <option value="es">Español (ES)</option>
         </select>
       </div>
     </div>
@@ -97,62 +73,18 @@
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto pt-2">
-        <div class="bg-slate-900/70 border border-indigo-500/30 p-4 rounded-2xl backdrop-blur text-center">
+        <div class="bg-slate-900/70 border border-indigo-500/30 p-4 rounded-2xl text-center">
           <span id="localFeeLabel" class="text-xs text-slate-400 block font-medium">التوصيل المحلي (دراجة / سيارة)</span>
           <div class="text-2xl font-extrabold text-indigo-400">2 MAD <span class="text-xs text-slate-500 font-normal">/ طلب</span></div>
         </div>
-        <div class="bg-slate-900/70 border border-amber-500/30 p-4 rounded-2xl backdrop-blur text-center">
+        <div class="bg-slate-900/70 border border-amber-500/30 p-4 rounded-2xl text-center">
           <span id="intercityFeeLabel" class="text-xs text-slate-400 block font-medium">الشحن بين المدن (شاحنات)</span>
           <div class="text-2xl font-extrabold text-amber-400">10 MAD <span class="text-xs text-slate-500 font-normal">/ رحلة</span></div>
         </div>
       </div>
     </section>
 
-    <!-- LIVE DEMO SECTION -->
-    <section class="max-w-7xl mx-auto px-6 mb-8">
-      <div class="bg-slate-900/40 border border-slate-800 rounded-3xl p-6 backdrop-blur space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-          <h3 id="liveTitle" class="font-bold text-sm text-indigo-400 flex items-center gap-2">
-            🔥 طلبات ورحلات نشطة حالياً على المنصة
-          </h3>
-          <span id="liveBadge" class="text-[11px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2.5 py-1 rounded-full">مُحدث فوراً</span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
-            <div class="flex justify-between items-center text-xs">
-              <span id="truckBadgeCard" class="text-amber-400 font-bold">🚛 شاحنة نقل بين المدن</span>
-              <span class="text-[10px] text-slate-500">15m ago</span>
-            </div>
-            <div class="text-xs font-semibold text-white">Casablanca ⬅️ Tangier</div>
-            <p id="truckCargoDesc" class="text-[11px] text-slate-400">حمولة أثاث ومعدات تجارية - 3 طن</p>
-            <div class="text-[10px] text-emerald-400 font-mono font-bold">Fee: 10 MAD</div>
-          </div>
-
-          <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
-            <div class="flex justify-between items-center text-xs">
-              <span id="motoBadgeCard" class="text-indigo-400 font-bold">🛵 توصيل محلي عاجل</span>
-              <span class="text-[10px] text-slate-500">5m ago</span>
-            </div>
-            <div class="text-xs font-semibold text-white">Meknes (Hamria ⬅️ Zitoun)</div>
-            <p id="motoCargoDesc" class="text-[11px] text-slate-400">توصيل 3 طرود ملابس لمتجر إلكتروني</p>
-            <div class="text-[10px] text-emerald-400 font-mono font-bold">Fee: 2 MAD</div>
-          </div>
-
-          <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
-            <div class="flex justify-between items-center text-xs">
-              <span id="carBadgeCard" class="text-indigo-400 font-bold">🚗 سيارة توصيل بضائع</span>
-              <span class="text-[10px] text-slate-500">30m ago</span>
-            </div>
-            <div class="text-xs font-semibold text-white">Rabat (Agdal ⬅️ Souissi)</div>
-            <p id="carCargoDesc" class="text-[11px] text-slate-400">توصيل طلبية حلويات ومستلزمات مناسبات</p>
-            <div class="text-[10px] text-emerald-400 font-mono font-bold">Fee: 2 MAD</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main Driver Form -->
+    <!-- Main Registration Section -->
     <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
       <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 space-y-4">
         <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
@@ -204,4 +136,37 @@
             <input type="text" placeholder="Elmehdi Benyahia" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
           </div>
           <div>
-            <label id="lblPhone" class="block text-xs
+            <label id="lblPhone" class="block text-xs text-slate-400 mb-1">رقم الهاتف / WhatsApp</label>
+            <input type="text" placeholder="+212 600-000000" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
+          </div>
+        </form>
+      </div>
+
+      <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 space-y-4">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm">3</div>
+          <h2 id="step3Title" class="font-bold text-slate-100 text-sm">التحويل وتأكيد المساهمة الرمزية</h2>
+        </div>
+        <div class="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800 space-y-2 text-xs text-slate-300">
+          <p id="paySummaryText">قم بتسديد 2 دراهم للتوصيل المحلي أو 10 دراهم لشحن الشاحنة مباشرة إلى حسابنا البنكي.</p>
+          <div class="p-2.5 bg-slate-900 border border-slate-800 rounded-xl">
+            <span class="block text-[10px] text-slate-500 uppercase font-semibold">Official Payment Email</span>
+            <a href="mailto:Elmehdidigitalesolutions@gmail.com" class="text-xs font-bold font-mono text-emerald-400 break-all block">
+              Elmehdidigitalesolutions@gmail.com
+            </a>
+          </div>
+        </div>
+        <button onclick="toggleBankModal()" id="btnShowRib" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold py-3 rounded-xl shadow-lg transition-all">
+          💳 عرض الحساب البنكي للتحويل (RIB)
+        </button>
+        <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال الدفع - LogiFair" id="btnSendReceipt" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-xl transition-all block text-center">
+          إرسال إيصال الدفع عبر البريد
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <!-- CLIENT VIEW -->
+  <div id="clientView" class="hidden">
+    <section class="max-w-7xl mx-auto px-6 pt-10 pb-6 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-50
