@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogiFair - Global Freight & Delivery Platform</title>
+  <title>LogiFair - Global Logistics Ecosystem</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -29,11 +29,26 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white pb-20 relative">
 
+  <!-- Background Decorative Gradients -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Live Statistics Bar (Social Proof) -->
+  <div class="bg-indigo-950/80 border-b border-indigo-500/20 py-2 px-4 text-center text-[11px] sm:text-xs font-semibold text-indigo-300 flex items-center justify-center gap-4 flex-wrap">
+    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 🟢 120+ سائق معتمد</span>
+    <span class="hidden sm:inline text-indigo-700">|</span>
+    <span>🚛 45+ رحلة شاحنة نشطة</span>
+    <span class="hidden sm:inline text-indigo-700">|</span>
+    <span class="text-emerald-400">⚡ اقتطاع ثابت: 2 MAD محلي / 10 MAD بين المدن</span>
+  </div>
+
   <!-- Navigation Bar -->
   <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-xl sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <div class="bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-extrabold text-2xl px-3.5 py-1.5 rounded-2xl shadow-lg">
+        <div class="bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-extrabold text-2xl px-3.5 py-1.5 rounded-2xl shadow-lg shadow-indigo-500/25">
           LF
         </div>
         <div>
@@ -65,7 +80,7 @@
     </div>
   </header>
 
-  <!-- DRIVER VIEW (الواجهة المخصصة للسائقين) -->
+  <!-- DRIVER VIEW (واجهة السائقين والشاحنات) -->
   <div id="driverView">
     <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-6 pt-10 pb-6 text-center space-y-4">
@@ -90,6 +105,53 @@
         <div class="bg-slate-900/70 border border-amber-500/30 p-4 rounded-2xl backdrop-blur text-center">
           <span class="text-xs text-slate-400 block font-medium">الشحن بين المدن (شاحنات)</span>
           <div class="text-2xl font-extrabold text-amber-400">10 MAD <span class="text-xs text-slate-500 font-normal">/ رحلة</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE DEMO / SEEDING SECTION (عروض جاهزة أولية لإنعاش المنصة) -->
+    <section class="max-w-7xl mx-auto px-6 mb-8">
+      <div class="bg-slate-900/40 border border-slate-800 rounded-3xl p-6 backdrop-blur space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <h3 class="font-bold text-sm text-indigo-400 flex items-center gap-2">
+            <span>🔥</span> طلبات ورحلات نشطة حالياً على المنصة
+          </h3>
+          <span class="text-[11px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2.5 py-1 rounded-full">مُحدث فوراً</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Item 1 -->
+          <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-amber-400 font-bold">🚛 شاحنة نقل بين المدن</span>
+              <span class="text-[10px] text-slate-500">منذ 15 دقيقة</span>
+            </div>
+            <div class="text-xs font-semibold text-white">الدار البيضاء ⬅️ طنجة</div>
+            <p class="text-[11px] text-slate-400">حمولة أثاث ومعدات تجارية - 3 طن</p>
+            <div class="text-[10px] text-emerald-400 font-mono font-bold">رسوم الخدمة: 10 MAD</div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-indigo-400 font-bold">🛵 توصيل محلي عاجل</span>
+              <span class="text-[10px] text-slate-500">منذ 5 دقائق</span>
+            </div>
+            <div class="text-xs font-semibold text-white">مكناس (حمرية ⬅️ زيتون)</div>
+            <p class="text-[11px] text-slate-400">توصيل 3 طرود ملابس لمتجر إلكتروني</p>
+            <div class="text-[10px] text-emerald-400 font-mono font-bold">رسوم الخدمة: 2 MAD</div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-indigo-400 font-bold">🚗 سيارة توصيل بضائع</span>
+              <span class="text-[10px] text-slate-500">منذ 30 دقيقة</span>
+            </div>
+            <div class="text-xs font-semibold text-white">الرباط (أقدال ⬅️ السويسي)</div>
+            <p class="text-[11px] text-slate-400">توصيل طلبية حلويات ومستلزمات مناسبات</p>
+            <div class="text-[10px] text-emerald-400 font-mono font-bold">رسوم الخدمة: 2 MAD</div>
+          </div>
         </div>
       </div>
     </section>
@@ -181,7 +243,7 @@
     </main>
   </div>
 
-  <!-- CLIENT & MERCHANTS VIEW (الواجهة المخصصة للزبناء والمتاجر) -->
+  <!-- CLIENT & MERCHANTS VIEW (واجهة الزبناء والمتاجر) -->
   <div id="clientView" class="hidden">
     <section class="max-w-7xl mx-auto px-6 pt-10 pb-6 text-center space-y-4">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-medium">
@@ -253,12 +315,12 @@
       <div class="space-y-3 text-xs text-slate-300">
         <div>
           <span class="text-slate-500 block">صاحب الحساب:</span>
-          <strong class="text-slate-100 text-sm">المهدي بنيحيى / Elmehdi Benyahia</strong>[span_4](start_span)[span_4](end_span)
+          <strong class="text-slate-100 text-sm">المهدي بنيحيى / Elmehdi Benyahia</strong>[span_0](start_span)[span_0](end_span)
         </div>
         <div>
           <span class="text-slate-500 block">رقم الحساب البنكي (RIB):</span>
           <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mt-1 gap-2">
-            <code id="ribNumber" class="text-emerald-400 font-mono font-bold text-xs tracking-wider break-all">230 480 2420971211009100 68</code>[span_5](start_span)[span_5](end_span)
+            <code id="ribNumber" class="text-emerald-400 font-mono font-bold text-xs tracking-wider break-all">230 480 2420971211009100 68</code>[span_1](start_span)[span_1](end_span)
             <button onclick="copyRIB()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg transition-all shrink-0">
               نسخ
             </button>
