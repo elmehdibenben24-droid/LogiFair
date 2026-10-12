@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogiFair - Global De-risked Logistics Platform</title>
+  <title>LogiFair - Global De-risked Freight & Delivery</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,7 +27,7 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-indigo-500 selection:text-white pb-20 relative">
 
   <!-- Background Decorative Gradients -->
   <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
@@ -36,7 +36,7 @@
   </div>
 
   <!-- Navigation Bar -->
-  <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-xl sticky top-0 z-50">
+  <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-xl sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
       <div class="flex items-center gap-3">
         <div class="bg-gradient-to-tr from-indigo-600 to-purple-600 text-white font-extrabold text-2xl px-3.5 py-1.5 rounded-2xl shadow-lg shadow-indigo-500/25">
@@ -68,75 +68,75 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="max-w-7xl mx-auto px-6 pt-16 pb-12 text-center space-y-6">
+  <section class="max-w-7xl mx-auto px-6 pt-12 pb-8 text-center space-y-6">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
       <span id="heroBadge">إعادة هيكلة قطاع التوصيل العابر للقارات</span>
     </div>
 
-    <h1 id="heroTitle" class="text-3xl md:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
+    <h1 id="heroTitle" class="text-3xl md:text-5xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
       منصة اللوجستيات العالمية الأكثر شعبية وعدالة بين السائقين والشركات
     </h1>
 
-    <p id="heroDesc" class="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
+    <p id="heroDesc" class="text-slate-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
       صفر عمولات مجحفة. اقتطاع ثابت رمزي: 2 دراهم فقط للتوصيل المحلي، و10 دراهم فقط للشحن الثقيل بين المدن بالشاحنات.
     </p>
 
     <!-- Global Rate Highlights -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto pt-4">
-      <div class="bg-slate-900/70 border border-indigo-500/30 p-5 rounded-2xl backdrop-blur text-center space-y-1">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto pt-2">
+      <div class="bg-slate-900/70 border border-indigo-500/30 p-4 rounded-2xl backdrop-blur text-center space-y-1">
         <span id="localFeeLabel" class="text-xs text-slate-400 block font-medium">التوصيل المحلي (دراجة / سيارة)</span>
-        <div class="text-3xl font-extrabold text-indigo-400">2 MAD <span class="text-xs text-slate-500 font-normal">/ طلب</span></div>
+        <div class="text-2xl font-extrabold text-indigo-400">2 MAD <span class="text-xs text-slate-500 font-normal">/ طلب</span></div>
       </div>
-      <div class="bg-slate-900/70 border border-amber-500/30 p-5 rounded-2xl backdrop-blur text-center space-y-1">
+      <div class="bg-slate-900/70 border border-amber-500/30 p-4 rounded-2xl backdrop-blur text-center space-y-1">
         <span id="intercityFeeLabel" class="text-xs text-slate-400 block font-medium">الشحن بين المدن (شاحنات)</span>
-        <div class="text-3xl font-extrabold text-amber-400">10 MAD <span class="text-xs text-slate-500 font-normal">/ رحلة</span></div>
+        <div class="text-2xl font-extrabold text-amber-400">10 MAD <span class="text-xs text-slate-500 font-normal">/ رحلة</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Vehicle Registration & Dispatch Section -->
-  <main class="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <!-- Main Section -->
+  <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
     
     <!-- Step 1: Vehicle Selector -->
     <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 backdrop-blur space-y-6">
       <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
         <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center text-sm">1</div>
-        <h2 id="step1Title" class="font-bold text-slate-100">اختيار نوع المركبة والخدمة</h2>
+        <h2 id="step1Title" class="font-bold text-slate-100 text-sm md:text-base">اختيار نوع المركبة والخدمة</h2>
       </div>
 
       <div class="space-y-3">
         <div onclick="selectVehicle('moto')" id="card-moto" class="p-4 rounded-2xl border-2 border-indigo-500/80 bg-slate-900/90 cursor-pointer transition-all flex items-center justify-between">
           <div>
-            <h3 class="font-bold text-sm text-white">🛵 <span id="vMotoName">دراجة نارية</span></h3>
-            <p id="vMotoDesc" class="text-xs text-slate-400">توصيل الطرود الخفيفة والطلبات العاجلة داخل المدينة</p>
+            <h3 class="font-bold text-xs md:text-sm text-white">🛵 <span id="vMotoName">دراجة نارية</span></h3>
+            <p id="vMotoDesc" class="text-[11px] text-slate-400">توصيل الطرود الخفيفة والطلبات العاجلة داخل المدينة</p>
           </div>
-          <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-lg">2 MAD</span>
+          <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-lg shrink-0">2 MAD</span>
         </div>
 
         <div onclick="selectVehicle('car')" id="card-car" class="p-4 rounded-2xl border border-slate-800 bg-slate-900/40 cursor-pointer transition-all flex items-center justify-between hover:border-slate-700">
           <div>
-            <h3 class="font-bold text-sm text-white">🚗 <span id="vCarName">سيارة عادية</span></h3>
-            <p id="vCarDesc" class="text-xs text-slate-400">توصيل البضائع المتوسطة والطلبات الخاصة</p>
+            <h3 class="font-bold text-xs md:text-sm text-white">🚗 <span id="vCarName">سيارة عادية</span></h3>
+            <p id="vCarDesc" class="text-[11px] text-slate-400">توصيل البضائع المتوسطة والطلبات الخاصة</p>
           </div>
-          <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-lg">2 MAD</span>
+          <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-lg shrink-0">2 MAD</span>
         </div>
 
         <div onclick="selectVehicle('truck')" id="card-truck" class="p-4 rounded-2xl border border-slate-800 bg-slate-900/40 cursor-pointer transition-all flex items-center justify-between hover:border-slate-700">
           <div>
-            <h3 class="font-bold text-sm text-white">🚛 <span id="vTruckName">شاحنة نقل heavy-duty</span></h3>
-            <p id="vTruckDesc" class="text-xs text-slate-400">شحن البضائع الكبيرة والحمولات الثقيلة بين المدن</p>
+            <h3 class="font-bold text-xs md:text-sm text-white">🚛 <span id="vTruckName">شاحنة نقل heavy-duty</span></h3>
+            <p id="vTruckDesc" class="text-[11px] text-slate-400">شحن البضائع الكبيرة والحمولات الثقيلة بين المدن</p>
           </div>
-          <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-lg">10 MAD</span>
+          <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-lg shrink-0">10 MAD</span>
         </div>
       </div>
     </div>
 
-    <!-- Step 2: Driver & Dispatch Info -->
+    <!-- Step 2: Driver Info -->
     <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 backdrop-blur space-y-6">
       <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
         <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center text-sm">2</div>
-        <h2 id="step2Title" class="font-bold text-slate-100">بيانات السائق والدولة</h2>
+        <h2 id="step2Title" class="font-bold text-slate-100 text-sm md:text-base">بيانات السائق والدولة</h2>
       </div>
 
       <form class="space-y-4" onsubmit="event.preventDefault();">
@@ -164,31 +164,74 @@
     </div>
 
     <!-- Step 3: Direct Payment & Contact Portal -->
-    <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 backdrop-blur space-y-6">
+    <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 backdrop-blur space-y-5">
       <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
         <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm">3</div>
-        <h2 id="step3Title" class="font-bold text-slate-100">التحويل وتأكيد المساهمة الرمزية</h2>
+        <h2 id="step3Title" class="font-bold text-slate-100 text-sm md:text-base">التحويل وتأكيد المساهمة الرمزية</h2>
       </div>
 
       <div class="bg-slate-950/80 p-4 rounded-2xl border border-slate-800 space-y-3">
-        <div id="paySummaryText" class="text-xs text-slate-400 leading-relaxed">
-          قم بتسديد **2 دراهم** للتوصيل المحلي أو **10 دراهم** لشحن الشاحنة مباشرة إلى حسابنا البنكي، ثم أرسل الإيصال للبريد الإلكتروني المخصص للتحقق الفوري.
+        <div id="paySummaryText" class="text-xs text-slate-300 leading-relaxed">
+          قم بتسديد <strong class="text-indigo-400">2 دراهم</strong> للتوصيل المحلي أو <strong class="text-amber-400">10 دراهم</strong> لشحن الشاحنة مباشرة إلى حسابنا البنكي، ثم أرسل الإيصال للبريد الإلكتروني المخصص للتحقق الفوري.
         </div>
 
         <div class="p-3 bg-slate-900 border border-slate-800 rounded-xl">
           <span class="block text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Official Payment Email</span>
-          <a href="mailto:Elmehdidigitalesolutions@gmail.com" class="text-xs font-bold font-mono text-emerald-400 hover:underline break-all">
+          <a href="mailto:Elmehdidigitalesolutions@gmail.com" class="text-xs font-bold font-mono text-emerald-400 hover:underline break-all block mt-0.5">
             Elmehdidigitalesolutions@gmail.com
           </a>
         </div>
       </div>
 
-      <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال مساهمة السائق - LogiFair" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
-        <span id="btnSendReceipt">إرسال إيصال الدفع عبر البريد</span>
-      </a>
+      <!-- Action Buttons -->
+      <div class="space-y-3">
+        <button onclick="toggleBankModal()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold py-3.5 rounded-xl shadow-lg shadow-indigo-600/20 transition-all flex items-center justify-center gap-2">
+          <span>💳 عرض الحساب البنكي للتحويل (RIB)</span>
+        </button>
+
+        <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال الدفع - LogiFair" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
+          <span id="btnSendReceipt">إرسال إيصال الدفع عبر البريد</span>
+        </a>
+      </div>
     </div>
 
   </main>
+
+  <!-- Modal Popup for RIB -->
+  <div id="bankModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl p-6 max-w-sm w-full space-y-4 shadow-2xl relative">
+      
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <h3 class="font-bold text-white text-sm">بيانات التحويل البنكي المباشر</h3>
+        <button onclick="toggleBankModal()" class="text-slate-400 hover:text-white font-bold p-1">✕</button>
+      </div>
+
+      <div class="space-y-3 text-xs text-slate-300">
+        <div>
+          <span class="text-slate-500 block">صاحب الحساب:</span>
+          <strong class="text-slate-100 text-sm">المهدي بنيحيى / Elmehdi Benyahia</strong>
+        </div>
+
+        <div>
+          <span class="text-slate-500 block">رقم الحساب البنكي (RIB):</span>
+          <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mt-1 gap-2">
+            <code id="ribNumber" class="text-emerald-400 font-mono font-bold text-xs tracking-wider break-all">230 480 2420971211009100 68</code>
+            <button onclick="copyRIB()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg transition-all shrink-0">
+              نسخ
+            </button>
+          </div>
+        </div>
+        <p id="copyAlert" class="text-[11px] text-emerald-400 hidden font-semibold text-center">✅ تم نسخ رقم الـ RIB بنجاح!</p>
+      </div>
+
+      <div class="pt-2">
+        <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال التحويل البنكي" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-xl transition-all">
+          إرسال إيصال التحويل بعد إتمام العملية
+        </a>
+      </div>
+
+    </div>
+  </div>
 
   <!-- Internationalization Dictionary JS -->
   <script>
@@ -310,65 +353,19 @@
         }
       });
     }
+
+    function toggleBankModal() {
+      const modal = document.getElementById('bankModal');
+      modal.classList.toggle('hidden');
+    }
+
+    function copyRIB() {
+      const rib = "230480242097121100910068";
+      navigator.clipboard.writeText(rib);
+      const alertText = document.getElementById('copyAlert');
+      alertText.classList.remove('hidden');
+      setTimeout(() => alertText.classList.add('hidden'), 2500);
+    }
   </script>
 </body>
 </html>
-
-<!-- زر عرض الحساب البنكي -->
-<button onclick="toggleBankModal()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg transition-all">
-  💳 عرض الحساب البنكي للتحويل (RIB)
-</button>
-
-<!-- النافذة المنبثقة (Modal) -->
-<div id="bankModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-  <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 max-w-md w-full space-y-4 shadow-2xl relative">
-    
-    <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-      <h3 class="font-bold text-white text-sm">بيانات التحويل البنكي المباشر</h3>
-      <button onclick="toggleBankModal()" class="text-slate-400 hover:text-white font-bold">✕</button>
-    </div>
-
-    <div class="space-y-3 text-xs text-slate-300">
-      <div>
-        <span class="text-slate-500 block">صاحب الحساب:</span>
-        <strong class="text-slate-100 text-sm">المهدي بنيحيى / Elmehdi Benyahia</strong>
-      </div>
-
-      <div>
-        <span class="text-slate-500 block">رقم الحساب البنكي (RIB):</span>
-        <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mt-1">
-          <code id="ribNumber" class="text-emerald-400 font-mono font-bold text-sm">230 780 0000000000000000 00</code>
-          <button onclick="copyRIB()" class="bg-indigo-600/30 hover:bg-indigo-600 text-indigo-300 hover:text-white px-2.5 py-1 rounded-lg transition-all">
-            نسخ
-          </button>
-        </div>
-      </div>
-      <p id="copyAlert" class="text-[10px] text-emerald-400 hidden">✅ تم نسخ رقم الـ RIB بنجاح!</p>
-    </div>
-
-    <div class="pt-2">
-      <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال التحويل" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2.5 rounded-xl transition-all">
-        إرسال إيصال التحويل بعد إتمام العملية
-      </a>
-    </div>
-
-  </div>
-</div>
-
-<script>
-  function toggleBankModal() {
-    const modal = document.getElementById('bankModal');
-    modal.classList.toggle('hidden');
-  }
-
-  function copyRIB() {
-    const rib = document.getElementById('ribNumber').innerText;
-    navigator.clipboard.writeText(rib);
-    const alertText = document.getElementById('copyAlert');
-    alertText.classList.remove('hidden');
-    setTimeout(() => alertText.classList.add('hidden'), 2500);
-  }
-</script>
-<code id="ribNumber" class="text-emerald-400 font-mono font-bold text-sm">
-  230 480 2420971211009100 68
-</code>
