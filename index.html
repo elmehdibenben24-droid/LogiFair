@@ -35,13 +35,13 @@
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-3xl"></div>
   </div>
 
-  <!-- Live Statistics Bar (Social Proof) -->
+  <!-- Live Statistics Bar -->
   <div class="bg-indigo-950/80 border-b border-indigo-500/20 py-2 px-4 text-center text-[11px] sm:text-xs font-semibold text-indigo-300 flex items-center justify-center gap-4 flex-wrap">
-    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 🟢 120+ سائق معتمد</span>
+    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> <span id="stat1">🟢 120+ سائق معتمد</span></span>
     <span class="hidden sm:inline text-indigo-700">|</span>
-    <span>🚛 45+ رحلة شاحنة نشطة</span>
+    <span id="stat2">🚛 45+ رحلة شاحنة نشطة</span>
     <span class="hidden sm:inline text-indigo-700">|</span>
-    <span class="text-emerald-400">⚡ اقتطاع ثابت: 2 MAD محلي / 10 MAD بين المدن</span>
+    <span class="text-emerald-400" id="stat3">⚡ اقتطاع ثابت: 2 MAD محلي / 10 MAD بين المدن</span>
   </div>
 
   <!-- Navigation Bar -->
@@ -62,10 +62,10 @@
         <!-- Main Tab Switcher -->
         <div class="bg-slate-950 p-1 rounded-xl border border-slate-800 flex text-xs">
           <button id="tabDriverBtn" onclick="switchUserRole('driver')" class="px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white transition-all">
-            🛵 للسائقين والشاحنات
+            🛵 <span id="btnDriverTab">للسائقين والشاحنات</span>
           </button>
           <button id="tabClientBtn" onclick="switchUserRole('client')" class="px-3 py-1.5 rounded-lg font-bold text-slate-400 hover:text-white transition-all">
-            📦 للزبناء والمتاجر
+            📦 <span id="btnClientTab">للزبناء والمتاجر</span>
           </button>
         </div>
 
@@ -80,9 +80,8 @@
     </div>
   </header>
 
-  <!-- DRIVER VIEW (واجهة السائقين والشاحنات) -->
+  <!-- DRIVER VIEW -->
   <div id="driverView">
-    <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-6 pt-10 pb-6 text-center space-y-4">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -99,106 +98,100 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto pt-2">
         <div class="bg-slate-900/70 border border-indigo-500/30 p-4 rounded-2xl backdrop-blur text-center">
-          <span class="text-xs text-slate-400 block font-medium">التوصيل المحلي (دراجة / سيارة)</span>
+          <span id="localFeeLabel" class="text-xs text-slate-400 block font-medium">التوصيل المحلي (دراجة / سيارة)</span>
           <div class="text-2xl font-extrabold text-indigo-400">2 MAD <span class="text-xs text-slate-500 font-normal">/ طلب</span></div>
         </div>
         <div class="bg-slate-900/70 border border-amber-500/30 p-4 rounded-2xl backdrop-blur text-center">
-          <span class="text-xs text-slate-400 block font-medium">الشحن بين المدن (شاحنات)</span>
+          <span id="intercityFeeLabel" class="text-xs text-slate-400 block font-medium">الشحن بين المدن (شاحنات)</span>
           <div class="text-2xl font-extrabold text-amber-400">10 MAD <span class="text-xs text-slate-500 font-normal">/ رحلة</span></div>
         </div>
       </div>
     </section>
 
-    <!-- LIVE DEMO / SEEDING SECTION (عروض جاهزة أولية لإنعاش المنصة) -->
+    <!-- LIVE DEMO SECTION -->
     <section class="max-w-7xl mx-auto px-6 mb-8">
       <div class="bg-slate-900/40 border border-slate-800 rounded-3xl p-6 backdrop-blur space-y-4">
         <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-          <h3 class="font-bold text-sm text-indigo-400 flex items-center gap-2">
-            <span>🔥</span> طلبات ورحلات نشطة حالياً على المنصة
+          <h3 id="liveTitle" class="font-bold text-sm text-indigo-400 flex items-center gap-2">
+            🔥 طلبات ورحلات نشطة حالياً على المنصة
           </h3>
-          <span class="text-[11px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2.5 py-1 rounded-full">مُحدث فوراً</span>
+          <span id="liveBadge" class="text-[11px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2.5 py-1 rounded-full">مُحدث فوراً</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <!-- Item 1 -->
           <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-xs">
-              <span class="text-amber-400 font-bold">🚛 شاحنة نقل بين المدن</span>
-              <span class="text-[10px] text-slate-500">منذ 15 دقيقة</span>
+              <span id="truckBadgeCard" class="text-amber-400 font-bold">🚛 شاحنة نقل بين المدن</span>
+              <span class="text-[10px] text-slate-500">15m ago</span>
             </div>
-            <div class="text-xs font-semibold text-white">الدار البيضاء ⬅️ طنجة</div>
-            <p class="text-[11px] text-slate-400">حمولة أثاث ومعدات تجارية - 3 طن</p>
-            <div class="text-[10px] text-emerald-400 font-mono font-bold">رسوم الخدمة: 10 MAD</div>
+            <div class="text-xs font-semibold text-white">Casablanca ⬅️ Tangier</div>
+            <p id="truckCargoDesc" class="text-[11px] text-slate-400">حمولة أثاث ومعدات تجارية - 3 طن</p>
+            <div class="text-[10px] text-emerald-400 font-mono font-bold">Fee: 10 MAD</div>
           </div>
 
-          <!-- Item 2 -->
           <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-xs">
-              <span class="text-indigo-400 font-bold">🛵 توصيل محلي عاجل</span>
-              <span class="text-[10px] text-slate-500">منذ 5 دقائق</span>
+              <span id="motoBadgeCard" class="text-indigo-400 font-bold">🛵 توصيل محلي عاجل</span>
+              <span class="text-[10px] text-slate-500">5m ago</span>
             </div>
-            <div class="text-xs font-semibold text-white">مكناس (حمرية ⬅️ زيتون)</div>
-            <p class="text-[11px] text-slate-400">توصيل 3 طرود ملابس لمتجر إلكتروني</p>
-            <div class="text-[10px] text-emerald-400 font-mono font-bold">رسوم الخدمة: 2 MAD</div>
+            <div class="text-xs font-semibold text-white">Meknes (Hamria ⬅️ Zitoun)</div>
+            <p id="motoCargoDesc" class="text-[11px] text-slate-400">توصيل 3 طرود ملابس لمتجر إلكتروني</p>
+            <div class="text-[10px] text-emerald-400 font-mono font-bold">Fee: 2 MAD</div>
           </div>
 
-          <!-- Item 3 -->
           <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
             <div class="flex justify-between items-center text-xs">
-              <span class="text-indigo-400 font-bold">🚗 سيارة توصيل بضائع</span>
-              <span class="text-[10px] text-slate-500">منذ 30 دقيقة</span>
+              <span id="carBadgeCard" class="text-indigo-400 font-bold">🚗 سيارة توصيل بضائع</span>
+              <span class="text-[10px] text-slate-500">30m ago</span>
             </div>
-            <div class="text-xs font-semibold text-white">الرباط (أقدال ⬅️ السويسي)</div>
-            <p class="text-[11px] text-slate-400">توصيل طلبية حلويات ومستلزمات مناسبات</p>
-            <div class="text-[10px] text-emerald-400 font-mono font-bold">رسوم الخدمة: 2 MAD</div>
+            <div class="text-xs font-semibold text-white">Rabat (Agdal ⬅️ Souissi)</div>
+            <p id="carCargoDesc" class="text-[11px] text-slate-400">توصيل طلبية حلويات ومستلزمات مناسبات</p>
+            <div class="text-[10px] text-emerald-400 font-mono font-bold">Fee: 2 MAD</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Main Registration Section -->
+    <!-- Main Driver Form -->
     <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-      
-      <!-- Step 1: Vehicle -->
       <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 space-y-4">
         <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
           <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center text-sm">1</div>
-          <h2 class="font-bold text-slate-100 text-sm">اختيار نوع المركبة والخدمة</h2>
+          <h2 id="step1Title" class="font-bold text-slate-100 text-sm">اختيار نوع المركبة والخدمة</h2>
         </div>
         <div class="space-y-3">
           <div class="p-3.5 rounded-2xl border-2 border-indigo-500/80 bg-slate-900/90 flex items-center justify-between">
             <div>
-              <h3 class="font-bold text-xs text-white">🛵 دراجة نارية</h3>
-              <p class="text-[10px] text-slate-400">توصيل عاجل داخل المدينة</p>
+              <h3 class="font-bold text-xs text-white">🛵 <span id="vMotoName">دراجة نارية</span></h3>
+              <p id="vMotoDesc" class="text-[10px] text-slate-400">توصيل عاجل داخل المدينة</p>
             </div>
             <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2 py-1 rounded-lg">2 MAD</span>
           </div>
           <div class="p-3.5 rounded-2xl border border-slate-800 bg-slate-900/40 flex items-center justify-between">
             <div>
-              <h3 class="font-bold text-xs text-white">🚗 سيارة عادية</h3>
-              <p class="text-[10px] text-slate-400">بضائع متوسطة وطلبات خاصة</p>
+              <h3 class="font-bold text-xs text-white">🚗 <span id="vCarName">سيارة عادية</span></h3>
+              <p id="vCarDesc" class="text-[10px] text-slate-400">بضائع متوسطة وطلبات خاصة</p>
             </div>
             <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2 py-1 rounded-lg">2 MAD</span>
           </div>
           <div class="p-3.5 rounded-2xl border border-slate-800 bg-slate-900/40 flex items-center justify-between">
             <div>
-              <h3 class="font-bold text-xs text-white">🚛 شاحنة نقل heavy-duty</h3>
-              <p class="text-[10px] text-slate-400">شحن بين المدن والحمولات الثقيلة</p>
+              <h3 class="font-bold text-xs text-white">🚛 <span id="vTruckName">شاحنة نقل heavy-duty</span></h3>
+              <p id="vTruckDesc" class="text-[10px] text-slate-400">شحن بين المدن والحمولات الثقيلة</p>
             </div>
             <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-2 py-1 rounded-lg">10 MAD</span>
           </div>
         </div>
       </div>
 
-      <!-- Step 2: Driver Info -->
       <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 space-y-4">
         <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
           <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center text-sm">2</div>
-          <h2 class="font-bold text-slate-100 text-sm">بيانات السائق والدولة</h2>
+          <h2 id="step2Title" class="font-bold text-slate-100 text-sm">بيانات السائق والدولة</h2>
         </div>
         <form class="space-y-3">
           <div>
-            <label class="block text-xs text-slate-400 mb-1">دولة التشغيل</label>
+            <label id="lblCountry" class="block text-xs text-slate-400 mb-1">دولة التشغيل</label>
             <select class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
               <option>المملكة المغربية 🇲🇦</option>
               <option>فرنسا 🇫🇷</option>
@@ -207,167 +200,8 @@
             </select>
           </div>
           <div>
-            <label class="block text-xs text-slate-400 mb-1">الاسم الكامل</label>
-            <input type="text" placeholder="المهدي بن يحيى" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
+            <label id="lblName" class="block text-xs text-slate-400 mb-1">الاسم الكامل</label>
+            <input type="text" placeholder="Elmehdi Benyahia" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
           </div>
           <div>
-            <label class="block text-xs text-slate-400 mb-1">رقم الهاتف / WhatsApp</label>
-            <input type="text" placeholder="+212 600-000000" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
-          </div>
-        </form>
-      </div>
-
-      <!-- Step 3: Payment & Modal -->
-      <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 space-y-4">
-        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
-          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm">3</div>
-          <h2 class="font-bold text-slate-100 text-sm">التحويل وتأكيد المساهمة الرمزية</h2>
-        </div>
-        <div class="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800 space-y-2 text-xs text-slate-300">
-          <p>قم بتسديد <strong class="text-indigo-400">2 دراهم</strong> للتوصيل المحلي أو <strong class="text-amber-400">10 دراهم</strong> لشحن الشاحنة مباشرة إلى حسابنا البنكي.</p>
-          <div class="p-2.5 bg-slate-900 border border-slate-800 rounded-xl">
-            <span class="block text-[10px] text-slate-500 uppercase font-semibold">Official Payment Email</span>
-            <a href="mailto:Elmehdidigitalesolutions@gmail.com" class="text-xs font-bold font-mono text-emerald-400 break-all block">
-              Elmehdidigitalesolutions@gmail.com
-            </a>
-          </div>
-        </div>
-        <button onclick="toggleBankModal()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold py-3 rounded-xl shadow-lg transition-all">
-          💳 عرض الحساب البنكي للتحويل (RIB)
-        </button>
-        <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال الدفع - LogiFair" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-xl transition-all block text-center">
-          إرسال إيصال الدفع عبر البريد
-        </a>
-      </div>
-
-    </main>
-  </div>
-
-  <!-- CLIENT & MERCHANTS VIEW (واجهة الزبناء والمتاجر) -->
-  <div id="clientView" class="hidden">
-    <section class="max-w-7xl mx-auto px-6 pt-10 pb-6 text-center space-y-4">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-medium">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>بوابة الزبناء والمتاجر الإلكترونية</span>
-      </div>
-
-      <h1 class="text-2xl md:text-5xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
-        اطلب توصيل طردك أو شحن بضاعتك بأفضل سعر في السوق
-      </h1>
-
-      <p class="text-slate-400 text-xs md:text-base max-w-2xl mx-auto">
-        نوصلك بأقرب سائق دراجة، سيارة، أو شاحنة نقل بين المدن مباشرة وبدون عمولات إضافية.
-      </p>
-    </section>
-
-    <!-- Client Order Form -->
-    <main class="max-w-3xl mx-auto px-6">
-      <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6 backdrop-blur">
-        <h2 class="font-bold text-lg text-emerald-400 border-b border-slate-800 pb-3">📦 تفاصيل طلب التوصيل أو الشحن</h2>
-
-        <form class="space-y-4" onsubmit="event.preventDefault(); alert('تم إرسال طلبك بنجاح! سيتم ربطك بأقرب سائق متاح فوراً.');">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1">نوع الخدمة المطلوب</label>
-              <select class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
-                <option>🛵 توصيل محلي عاجل (دراجة نارية)</option>
-                <option>🚗 توصيل بضائع متوسطة (سيارة)</option>
-                <option>🚛 شحن بضائع بين المدن (شاحنة)</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1">اسمك / اسم المتجر</label>
-              <input type="text" placeholder="متجر الأناقة / أحمد" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1">عنوان الاستلام (Pickup)</label>
-              <input type="text" placeholder="الدار البيضاء - المعاريف" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1">عنوان التسليم (Delivery)</label>
-              <input type="text" placeholder="طنجة - الوسط" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">رقم الهاتف للتواصل الفوري</label>
-            <input type="text" placeholder="+212 600-000000" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
-          </div>
-
-          <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs py-3.5 rounded-xl shadow-lg transition-all">
-            🚀 إرسال طلب التوصيل فوراً للسائقين
-          </button>
-        </form>
-      </div>
-    </main>
-  </div>
-
-  <!-- Modal Popup for RIB -->
-  <div id="bankModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-700 rounded-3xl p-6 max-w-sm w-full space-y-4 shadow-2xl relative">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-        <h3 class="font-bold text-white text-sm">بيانات التحويل البنكي المباشر</h3>
-        <button onclick="toggleBankModal()" class="text-slate-400 hover:text-white font-bold p-1">✕</button>
-      </div>
-      <div class="space-y-3 text-xs text-slate-300">
-        <div>
-          <span class="text-slate-500 block">صاحب الحساب:</span>
-          <strong class="text-slate-100 text-sm">المهدي بنيحيى / Elmehdi Benyahia</strong>[span_0](start_span)[span_0](end_span)
-        </div>
-        <div>
-          <span class="text-slate-500 block">رقم الحساب البنكي (RIB):</span>
-          <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mt-1 gap-2">
-            <code id="ribNumber" class="text-emerald-400 font-mono font-bold text-xs tracking-wider break-all">230 480 2420971211009100 68</code>[span_1](start_span)[span_1](end_span)
-            <button onclick="copyRIB()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg transition-all shrink-0">
-              نسخ
-            </button>
-          </div>
-        </div>
-        <p id="copyAlert" class="text-[11px] text-emerald-400 hidden font-semibold text-center">✅ تم نسخ رقم الـ RIB بنجاح!</p>
-      </div>
-      <div class="pt-2">
-        <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال التحويل البنكي" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-xl transition-all">
-          إرسال إيصال التحويل بعد إتمام العملية
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function switchUserRole(role) {
-      const driverView = document.getElementById('driverView');
-      const clientView = document.getElementById('clientView');
-      const driverBtn = document.getElementById('tabDriverBtn');
-      const clientBtn = document.getElementById('tabClientBtn');
-
-      if (role === 'driver') {
-        driverView.classList.remove('hidden');
-        clientView.classList.add('hidden');
-        driverBtn.className = 'px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white transition-all';
-        clientBtn.className = 'px-3 py-1.5 rounded-lg font-bold text-slate-400 hover:text-white transition-all';
-      } else {
-        driverView.classList.add('hidden');
-        clientView.classList.remove('hidden');
-        clientBtn.className = 'px-3 py-1.5 rounded-lg font-bold bg-emerald-600 text-white transition-all';
-        driverBtn.className = 'px-3 py-1.5 rounded-lg font-bold text-slate-400 hover:text-white transition-all';
-      }
-    }
-
-    function toggleBankModal() {
-      const modal = document.getElementById('bankModal');
-      modal.classList.toggle('hidden');
-    }
-
-    function copyRIB() {
-      const rib = "230480242097121100910068";
-      navigator.clipboard.writeText(rib);
-      const alertText = document.getElementById('copyAlert');
-      alertText.classList.remove('hidden');
-      setTimeout(() => alertText.classList.add('hidden'), 2500);
-    }
-  </script>
-</body>
-</html>
+            <label id="lblPhone" class="block text-xs
