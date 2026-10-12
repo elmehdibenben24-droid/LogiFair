@@ -313,3 +313,62 @@
   </script>
 </body>
 </html>
+
+<!-- زر عرض الحساب البنكي -->
+<button onclick="toggleBankModal()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg transition-all">
+  💳 عرض الحساب البنكي للتحويل (RIB)
+</button>
+
+<!-- النافذة المنبثقة (Modal) -->
+<div id="bankModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+  <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 max-w-md w-full space-y-4 shadow-2xl relative">
+    
+    <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+      <h3 class="font-bold text-white text-sm">بيانات التحويل البنكي المباشر</h3>
+      <button onclick="toggleBankModal()" class="text-slate-400 hover:text-white font-bold">✕</button>
+    </div>
+
+    <div class="space-y-3 text-xs text-slate-300">
+      <div>
+        <span class="text-slate-500 block">صاحب الحساب:</span>
+        <strong class="text-slate-100 text-sm">المهدي بنيحيى / Elmehdi Benyahia</strong>
+      </div>
+
+      <div>
+        <span class="text-slate-500 block">رقم الحساب البنكي (RIB):</span>
+        <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mt-1">
+          <code id="ribNumber" class="text-emerald-400 font-mono font-bold text-sm">230 780 0000000000000000 00</code>
+          <button onclick="copyRIB()" class="bg-indigo-600/30 hover:bg-indigo-600 text-indigo-300 hover:text-white px-2.5 py-1 rounded-lg transition-all">
+            نسخ
+          </button>
+        </div>
+      </div>
+      <p id="copyAlert" class="text-[10px] text-emerald-400 hidden">✅ تم نسخ رقم الـ RIB بنجاح!</p>
+    </div>
+
+    <div class="pt-2">
+      <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال التحويل" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2.5 rounded-xl transition-all">
+        إرسال إيصال التحويل بعد إتمام العملية
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function toggleBankModal() {
+    const modal = document.getElementById('bankModal');
+    modal.classList.toggle('hidden');
+  }
+
+  function copyRIB() {
+    const rib = document.getElementById('ribNumber').innerText;
+    navigator.clipboard.writeText(rib);
+    const alertText = document.getElementById('copyAlert');
+    alertText.classList.remove('hidden');
+    setTimeout(() => alertText.classList.add('hidden'), 2500);
+  }
+</script>
+<code id="ribNumber" class="text-emerald-400 font-mono font-bold text-sm">
+  230 480 2420971211009100 68
+</code>
