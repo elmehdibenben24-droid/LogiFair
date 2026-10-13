@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LogiFair - Global Logistics Ecosystem</title>
+  <title>LogiFair - Global Freight & Delivery Ecosystem</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
@@ -73,4 +73,412 @@
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto pt-2">
-        <div class="bg-slate-900/70 border border-indigo-5
+        <div class="bg-slate-900/70 border border-indigo-500/30 p-4 rounded-2xl text-center">
+          <span data-i18n="localFeeLabel" class="text-xs text-slate-400 block font-medium">التوصيل المحلي (دراجة / سيارة)</span>
+          <div class="text-2xl font-extrabold text-indigo-400">2 MAD <span class="text-xs text-slate-500 font-normal">/ طلب</span></div>
+        </div>
+        <div class="bg-slate-900/70 border border-amber-500/30 p-4 rounded-2xl text-center">
+          <span data-i18n="intercityFeeLabel" class="text-xs text-slate-400 block font-medium">الشحن بين المدن (شاحنات)</span>
+          <div class="text-2xl font-extrabold text-amber-400">10 MAD <span class="text-xs text-slate-500 font-normal">/ رحلة</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Registration Section -->
+    <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 space-y-4">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+          <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center text-sm">1</div>
+          <h2 data-i18n="step1Title" class="font-bold text-slate-100 text-sm">اختيار نوع المركبة والخدمة</h2>
+        </div>
+        <div class="space-y-3">
+          <div class="p-3.5 rounded-2xl border-2 border-indigo-500/80 bg-slate-900/90 flex items-center justify-between">
+            <div>
+              <h3 class="font-bold text-xs text-white">🛵 <span data-i18n="vMotoName">دراجة نارية</span></h3>
+              <p data-i18n="vMotoDesc" class="text-[10px] text-slate-400">توصيل عاجل داخل المدينة</p>
+            </div>
+            <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2 py-1 rounded-lg">2 MAD</span>
+          </div>
+          <div class="p-3.5 rounded-2xl border border-slate-800 bg-slate-900/40 flex items-center justify-between">
+            <div>
+              <h3 class="font-bold text-xs text-white">🚗 <span data-i18n="vCarName">سيارة عادية</span></h3>
+              <p data-i18n="vCarDesc" class="text-[10px] text-slate-400">بضائع متوسطة وطلبات خاصة</p>
+            </div>
+            <span class="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2 py-1 rounded-lg">2 MAD</span>
+          </div>
+          <div class="p-3.5 rounded-2xl border border-slate-800 bg-slate-900/40 flex items-center justify-between">
+            <div>
+              <h3 class="font-bold text-xs text-white">🚛 <span data-i18n="vTruckName">شاحنة نقل heavy-duty</span></h3>
+              <p data-i18n="vTruckDesc" class="text-[10px] text-slate-400">شحن بين المدن والحمولات الثقيلة</p>
+            </div>
+            <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-2 py-1 rounded-lg">10 MAD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 space-y-4">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+          <div class="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 font-bold flex items-center justify-center text-sm">2</div>
+          <h2 data-i18n="step2Title" class="font-bold text-slate-100 text-sm">بيانات السائق والدولة</h2>
+        </div>
+        <form class="space-y-3">
+          <div>
+            <label data-i18n="lblCountry" class="block text-xs text-slate-400 mb-1">دولة التشغيل</label>
+            <select class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
+              <option>المملكة المغربية 🇲🇦</option>
+              <option>فرنسا 🇫🇷</option>
+              <option>الإمارات العربية المتحدة 🇦🇪</option>
+              <option>إسبانيا 🇪🇸</option>
+            </select>
+          </div>
+          <div>
+            <label data-i18n="lblName" class="block text-xs text-slate-400 mb-1">الاسم الكامل</label>
+            <input type="text" placeholder="Elmehdi Benyahia" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
+          </div>
+          <div>
+            <label data-i18n="lblPhone" class="block text-xs text-slate-400 mb-1">رقم الهاتف / WhatsApp</label>
+            <input type="text" placeholder="+212 600-000000" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
+          </div>
+        </form>
+      </div>
+
+      <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-6 space-y-4">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm">3</div>
+          <h2 data-i18n="step3Title" class="font-bold text-slate-100 text-sm">التحويل وتأكيد المساهمة الرمزية</h2>
+        </div>
+        <div class="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800 space-y-2 text-xs text-slate-300">
+          <p data-i18n="paySummaryText">قم بتسديد 2 دراهم للتوصيل المحلي أو 10 دراهم لشحن الشاحنة مباشرة إلى حسابنا البنكي.</p>
+          <div class="p-2.5 bg-slate-900 border border-slate-800 rounded-xl">
+            <span class="block text-[10px] text-slate-500 uppercase font-semibold">Official Payment Email</span>
+            <a href="mailto:Elmehdidigitalesolutions@gmail.com" class="text-xs font-bold font-mono text-emerald-400 break-all block">
+              Elmehdidigitalesolutions@gmail.com
+            </a>
+          </div>
+        </div>
+        <button onclick="toggleBankModal()" data-i18n="btnShowRib" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold py-3 rounded-xl shadow-lg transition-all">
+          💳 عرض الحساب البنكي للتحويل (RIB)
+        </button>
+        <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال الدفع - LogiFair" data-i18n="btnSendReceipt" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-xl transition-all block text-center">
+          إرسال إيصال الدفع عبر البريد
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <!-- CLIENT VIEW -->
+  <div id="clientView" class="hidden">
+    <section class="max-w-7xl mx-auto px-6 pt-10 pb-6 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-medium">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span data-i18n="clientBadge">بوابة الزبناء والمتاجر الإلكترونية</span>
+      </div>
+
+      <h1 data-i18n="clientTitle" class="text-2xl md:text-5xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
+        اطلب توصيل طردك أو شحن بضاعتك بأفضل سعر في السوق
+      </h1>
+
+      <p data-i18n="clientDesc" class="text-slate-400 text-xs md:text-base max-w-2xl mx-auto">
+        نوصلك بأقرب سائق دراجة، سيارة، أو شاحنة نقل بين المدن مباشرة وبدون عمولات إضافية.
+      </p>
+    </section>
+
+    <main class="max-w-3xl mx-auto px-6">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6 backdrop-blur">
+        <h2 data-i18n="orderFormHeader" class="font-bold text-lg text-emerald-400 border-b border-slate-800 pb-3">📦 تفاصيل طلب التوصيل أو الشحن</h2>
+
+        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Order Submitted Successfully!');">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label data-i18n="lblServiceType" class="block text-xs font-semibold text-slate-400 mb-1">نوع الخدمة المطلوب</label>
+              <select class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
+                <option>🛵 توصيل محلي عاجل (دراجة نارية)</option>
+                <option>🚗 توصيل بضائع متوسطة (سيارة)</option>
+                <option>🚛 شحن بضائع بين المدن (شاحنة)</option>
+              </select>
+            </div>
+            <div>
+              <label data-i18n="lblClientName" class="block text-xs font-semibold text-slate-400 mb-1">اسمك / اسم المتجر</label>
+              <input type="text" placeholder="متجر الأناقة / أحمد" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label data-i18n="lblPickup" class="block text-xs font-semibold text-slate-400 mb-1">عنوان الاستلام (Pickup)</label>
+              <input type="text" placeholder="الدار البيضاء - المعاريف" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
+            </div>
+            <div>
+              <label data-i18n="lblDelivery" class="block text-xs font-semibold text-slate-400 mb-1">عنوان التسليم (Delivery)</label>
+              <input type="text" placeholder="طنجة - الوسط" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
+            </div>
+          </div>
+
+          <div>
+            <label data-i18n="lblClientPhone" class="block text-xs font-semibold text-slate-400 mb-1">رقم الهاتف للتواصل الفوري</label>
+            <input type="text" placeholder="+212 600-000000" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-200">
+          </div>
+
+          <button type="submit" data-i18n="btnSubmitOrder" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs py-3.5 rounded-xl shadow-lg transition-all">
+            🚀 إرسال طلب التوصيل فوراً للسائقين
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Popup for RIB -->
+  <div id="bankModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl p-6 max-w-sm w-full space-y-4 shadow-2xl relative">
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <h3 data-i18n="modalTitle" class="font-bold text-white text-sm">بيانات التحويل البنكي المباشر</h3>
+        <button onclick="toggleBankModal()" class="text-slate-400 hover:text-white font-bold p-1">✕</button>
+      </div>
+      <div class="space-y-3 text-xs text-slate-300">
+        <div>
+          <span data-i18n="modalOwner" class="text-slate-500 block">صاحب الحساب:</span>
+          <strong class="text-slate-100 text-sm">المهدي بنيحيى / Elmehdi Benyahia</strong>
+        </div>
+        <div>
+          <span data-i18n="modalRib" class="text-slate-500 block">رقم الحساب البنكي (RIB):</span>
+          <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mt-1 gap-2">
+            <code id="ribNumber" class="text-emerald-400 font-mono font-bold text-xs tracking-wider break-all">230 480 2420971211009100 68</code>
+            <button onclick="copyRIB()" data-i18n="btnCopy" class="bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg transition-all shrink-0">
+              نسخ
+            </button>
+          </div>
+        </div>
+        <p id="copyAlert" class="text-[11px] text-emerald-400 hidden font-semibold text-center">✅ تم نسخ رقم الـ RIB بنجاح!</p>
+      </div>
+      <div class="pt-2">
+        <a href="mailto:Elmehdidigitalesolutions@gmail.com?subject=إرسال إيصال التحويل البنكي" data-i18n="modalBtnSend" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 rounded-xl transition-all">
+          إرسال إيصال التحويل بعد إتمام العملية
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      ar: {
+        dir: 'rtl',
+        stat1: '🟢 120+ سائق معتمد',
+        stat2: '🚛 45+ رحلة شاحنة نشطة',
+        stat3: '⚡ اقتطاع ثابت: 2 MAD محلي / 10 MAD بين المدن',
+        tabDriver: 'للسائقين والشاحنات',
+        tabClient: 'للزبناء والمتاجر',
+        heroBadge: 'بوابة السائقين وأرباب الشاحنات',
+        heroTitle: 'انضم لأعدل منصة توصيل وشحن في العالم',
+        heroDesc: 'صفر عمولات مجحفة. اقتطاع ثابت رمزي: 2 دراهم فقط للتوصيل المحلي، و10 دراهم فقط للشحن الثقيل بين المدن بالشاحنات.',
+        localFeeLabel: 'التوصيل المحلي (دراجة / سيارة)',
+        intercityFeeLabel: 'الشحن بين المدن (شاحنات)',
+        step1Title: 'اختيار نوع المركبة والخدمة',
+        vMotoName: 'دراجة نارية',
+        vMotoDesc: 'توصيل عاجل داخل المدينة',
+        vCarName: 'سيارة عادية',
+        vCarDesc: 'بضائع متوسطة وطلبات خاصة',
+        vTruckName: 'شاحنة نقل heavy-duty',
+        vTruckDesc: 'شحن بين المدن والحمولات الثقيلة',
+        step2Title: 'بيانات السائق والدولة',
+        lblCountry: 'دولة التشغيل',
+        lblName: 'الاسم الكامل',
+        lblPhone: 'رقم الهاتف / WhatsApp',
+        step3Title: 'التحويل وتأكيد المساهمة الرمزية',
+        paySummaryText: 'قم بتسديد 2 دراهم للتوصيل المحلي أو 10 دراهم لشحن الشاحنة مباشرة إلى حسابنا البنكي.',
+        btnShowRib: '💳 عرض الحساب البنكي للتحويل (RIB)',
+        btnSendReceipt: 'إرسال إيصال الدفع عبر البريد',
+        clientBadge: 'بوابة الزبناء والمتاجر الإلكترونية',
+        clientTitle: 'اطلب توصيل طردك أو شحن بضاعتك بأفضل سعر في السوق',
+        clientDesc: 'نوصلك بأقرب سائق دراجة، سيارة، أو شاحنة نقل بين المدن مباشرة وبدون عمولات إضافية.',
+        orderFormHeader: '📦 تفاصيل طلب التوصيل أو الشحن',
+        lblServiceType: 'نوع الخدمة المطلوب',
+        lblClientName: 'اسمك / اسم المتجر',
+        lblPickup: 'عنوان الاستلام (Pickup)',
+        lblDelivery: 'عنوان التسليم (Delivery)',
+        lblClientPhone: 'رقم الهاتف للتواصل الفوري',
+        btnSubmitOrder: '🚀 إرسال طلب التوصيل فوراً للسائقين',
+        modalTitle: 'بيانات التحويل البنكي المباشر',
+        modalOwner: 'صاحب الحساب:',
+        modalRib: 'رقم الحساب البنكي (RIB):',
+        btnCopy: 'نسخ',
+        modalBtnSend: 'إرسال إيصال التحويل بعد إتمام العملية'
+      },
+      en: {
+        dir: 'ltr',
+        stat1: '🟢 120+ Verified Drivers',
+        stat2: '🚛 45+ Active Truck Trips',
+        stat3: '⚡ Flat Fee: 2 MAD Local / 10 MAD Intercity',
+        tabDriver: 'For Drivers & Trucks',
+        tabClient: 'For Clients & Merchants',
+        heroBadge: 'Drivers & Fleet Owners Portal',
+        heroTitle: 'Join The Most Fair Global Freight & Delivery Platform',
+        heroDesc: 'Zero unfair commissions. Symbolic flat fee: Only 2 MAD for local delivery, and 10 MAD for intercity heavy truck shipping.',
+        localFeeLabel: 'Local Delivery (Bike / Car)',
+        intercityFeeLabel: 'Intercity Freight (Trucks)',
+        step1Title: 'Select Vehicle & Service',
+        vMotoName: 'Motorcycle',
+        vMotoDesc: 'Express intra-city delivery',
+        vCarName: 'Standard Car',
+        vCarDesc: 'Medium cargo & special orders',
+        vTruckName: 'Heavy-Duty Freight Truck',
+        vTruckDesc: 'Intercity bulk & heavy cargo',
+        step2Title: 'Driver & Country Details',
+        lblCountry: 'Operating Country',
+        lblName: 'Full Name',
+        lblPhone: 'Phone / WhatsApp Number',
+        step3Title: 'Flat Fee Transfer & Verification',
+        paySummaryText: 'Pay the flat 2 MAD (local) or 10 MAD (intercity) directly to our bank account.',
+        btnShowRib: '💳 Display Bank RIB Account',
+        btnSendReceipt: 'Send Payment Receipt via Email',
+        clientBadge: 'Clients & Merchants Portal',
+        clientTitle: 'Order Parcel Delivery or Freight at Unbeatable Rates',
+        clientDesc: 'Connect directly with nearest bike, car, or truck drivers without extra middleman fees.',
+        orderFormHeader: '📦 Dispatch / Delivery Order Details',
+        lblServiceType: 'Required Service Type',
+        lblClientName: 'Your Name / Store Name',
+        lblPickup: 'Pickup Address',
+        lblDelivery: 'Delivery Address',
+        lblClientPhone: 'Direct Phone / WhatsApp',
+        btnSubmitOrder: '🚀 Dispatch Order to Available Drivers',
+        modalTitle: 'Direct Bank Transfer Details',
+        modalOwner: 'Account Owner:',
+        modalRib: 'Bank Account Number (RIB):',
+        btnCopy: 'Copy',
+        modalBtnSend: 'Send Transfer Receipt After Payment'
+      },
+      fr: {
+        dir: 'ltr',
+        stat1: '🟢 120+ Chauffeurs Vérifiés',
+        stat2: '🚛 45+ Trajets Camions Actifs',
+        stat3: '⚡ Tarif Fixe : 2 MAD Local / 10 MAD Interurbain',
+        tabDriver: 'Pour Chauffeurs & Camions',
+        tabClient: 'Pour Clients & Commerçants',
+        heroBadge: 'Portail Chauffeurs & Transporteurs',
+        heroTitle: 'Rejoignez la Plateforme Logistique la Plus Équitable au Monde',
+        heroDesc: 'Zéro commission abusive. Tarif fixe et symbolique : Seulement 2 MAD pour la livraison locale et 10 MAD pour le transport routier par camion.',
+        localFeeLabel: 'Livraison Locale (Moto / Voiture)',
+        intercityFeeLabel: 'Transport Interurbain (Camions)',
+        step1Title: 'Sélectionnez le Véhicule',
+        vMotoName: 'Moto',
+        vMotoDesc: 'Livraison express en ville',
+        vCarName: 'Voiture',
+        vCarDesc: 'Marchandises moyennes',
+        vTruckName: 'Camion Poids Lourds',
+        vTruckDesc: 'Fret lourd interurbain',
+        step2Title: 'Infos Chauffeur & Pays',
+        lblCountry: 'Pays d\'Opération',
+        lblName: 'Nom Complet',
+        lblPhone: 'Téléphone / WhatsApp',
+        step3Title: 'Virement & Confirmation',
+        paySummaryText: 'Réglez les 2 MAD (local) ou 10 MAD (interurbain) directement sur notre compte bancaire.',
+        btnShowRib: '💳 Afficher le RIB Bancaire',
+        btnSendReceipt: 'Envoyer le Reçu par E-mail',
+        clientBadge: 'Portail Clients & E-Commerçants',
+        clientTitle: 'Commandez votre Livraison au Meilleur Prix du Marché',
+        clientDesc: 'Mise en relation directe avec les chauffeurs sans frais d\'intermédiaires.',
+        orderFormHeader: '📦 Détails de la Commande de Transport',
+        lblServiceType: 'Type de Service Requis',
+        lblClientName: 'Votre Nom / Nom du Magasin',
+        lblPickup: 'Adresse d\'Enlèvement',
+        lblDelivery: 'Adresse de Livraison',
+        lblClientPhone: 'Numéro de Téléphone Direct',
+        btnSubmitOrder: '🚀 Envoyer la Commande aux Chauffeurs',
+        modalTitle: 'Coordonnées Bancaires Directes',
+        modalOwner: 'Titulaire du Compte:',
+        modalRib: 'Numéro de Compte (RIB):',
+        btnCopy: 'Copier',
+        modalBtnSend: 'Envoyer le Reçu de Virement'
+      },
+      es: {
+        dir: 'ltr',
+        stat1: '🟢 120+ Conductores Verificados',
+        stat2: '🚛 45+ Viajes de Camión Activos',
+        stat3: '⚡ Tarifa Fija: 2 MAD Local / 10 MAD Interurbano',
+        tabDriver: 'Para Conductores y Camiones',
+        tabClient: 'Para Clientes y Tiendas',
+        heroBadge: 'Portal para Conductores y Transportistas',
+        heroTitle: 'Únase a la Plataforma de Transporte Más Justa del Mundo',
+        heroDesc: 'Sin comisiones abusivas. Tarifa fija simbólica: Solo 2 MAD para entregas locales y 10 MAD para transporte pesado entre ciudades.',
+        localFeeLabel: 'Entrega Local (Moto / Coche)',
+        intercityFeeLabel: 'Envío Entre Ciudades (Camiones)',
+        step1Title: 'Seleccione Vehículo y Servicio',
+        vMotoName: 'Motocicleta',
+        vMotoDesc: 'Entrega exprés en la ciudad',
+        vCarName: 'Automóvil',
+        vCarDesc: 'Carga mediana y especial',
+        vTruckName: 'Camión de Carga Pesada',
+        vTruckDesc: 'Carga pesada entre ciudades',
+        step2Title: 'Datos del Conductor y País',
+        lblCountry: 'País de Operación',
+        lblName: 'Nombre Completo',
+        lblPhone: 'Teléfono / WhatsApp',
+        step3Title: 'Pago Directo y Verificación',
+        paySummaryText: 'Pague los 2 MAD (local) o 10 MAD (interurbano) directamente a nuestra cuenta bancaria.',
+        btnShowRib: '💳 Mostrar Cuenta Bancaria (RIB)',
+        btnSendReceipt: 'Enviar Recibo por Correo',
+        clientBadge: 'Portal para Clientes y Comercios',
+        clientTitle: 'Solicite Entrega o Envío de Carga al Mejor Precio',
+        clientDesc: 'Conexión directa con conductores sin comisiones de intermediarios.',
+        orderFormHeader: '📦 Detalles del Pedido de Transporte',
+        lblServiceType: 'Tipo de Servicio Requerido',
+        lblClientName: 'Su Nombre / Nombre de la Tienda',
+        lblPickup: 'Dirección de Recogida',
+        lblDelivery: 'Dirección de Entrega',
+        lblClientPhone: 'Teléfono Directo',
+        btnSubmitOrder: '🚀 Enviar Pedido a los Conductores',
+        modalTitle: 'Datos de Transferencia Bancaria',
+        modalOwner: 'Titular de la Cuenta:',
+        modalRib: 'Número de Cuenta (RIB):',
+        btnCopy: 'Copiar',
+        modalBtnSend: 'Enviar Recibo Tras el Pago'
+      }
+    };
+
+    function changeLanguage(langKey) {
+      const data = translations[langKey];
+      if (!data) return;
+      document.documentElement.dir = data.dir;
+      document.documentElement.lang = langKey;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (data[key]) {
+          el.innerText = data[key];
+        }
+      });
+    }
+
+    function switchUserRole(role) {
+      const driverView = document.getElementById('driverView');
+      const clientView = document.getElementById('clientView');
+      const driverBtn = document.getElementById('tabDriverBtn');
+      const clientBtn = document.getElementById('tabClientBtn');
+
+      if (role === 'driver') {
+        driverView.classList.remove('hidden');
+        clientView.classList.add('hidden');
+        driverBtn.className = 'px-3 py-1.5 rounded-lg font-bold bg-indigo-600 text-white transition-all';
+        clientBtn.className = 'px-3 py-1.5 rounded-lg font-bold text-slate-400 hover:text-white transition-all';
+      } else {
+        driverView.classList.add('hidden');
+        clientView.classList.remove('hidden');
+        clientBtn.className = 'px-3 py-1.5 rounded-lg font-bold bg-emerald-600 text-white transition-all';
+        driverBtn.className = 'px-3 py-1.5 rounded-lg font-bold text-slate-400 hover:text-white transition-all';
+      }
+    }
+
+    function toggleBankModal() {
+      const modal = document.getElementById('bankModal');
+      modal.classList.toggle('hidden');
+    }
+
+    function copyRIB() {
+      const rib = "230480242097121100910068";
+      navigator.clipboard.writeText(rib);
+      const alertText = document.getElementById('copyAlert');
+      alertText.classList.remove('hidden');
+      setTimeout(() => alertText.classList.add('hidden'), 2500);
+    }
+  </script>
+</body>
+</html>
